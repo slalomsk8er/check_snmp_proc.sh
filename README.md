@@ -20,4 +20,5 @@
 <br>     Print version and license information </dd>
 <br>
 <br>  This plugin uses the 'snmpwalk' command included with the NET-SNMP package.
+<br>  This plugin uses the [utils.sh from monitoring-plugins.org](https://github.com/monitoring-plugins/monitoring-plugins/blob/v2.2/plugins-scripts/utils.sh.in)
 <br>  This nagios plugins comes with ABSOLUTELY NO WARRANTY. So, enjoy ;)

@@ -1,5 +1,8 @@
 # check_snmp_proc.sh
 ## This is small Nagios plugin for checking status of processes (or quantity of them) via SNMP</H5>
+
+This plugin uses the [utils.sh from monitoring-plugins.org](https://github.com/monitoring-plugins/monitoring-plugins/blob/v2.2/plugins-scripts/utils.sh.in) to be able to use ranges for warning and critical thresholds.
+
 ### Usage:
 ```
 ./check_snmp_proc -H 127.0.0.1 -C public -N ssh -w 3 -c 0
@@ -25,10 +28,9 @@ Where:
      Print version and license information </dd>
 
   This plugin uses the 'snmpwalk' command included with the NET-SNMP package.
-  This plugin uses the [utils.sh from monitoring-plugins.org](https://github.com/monitoring-plugins/monitoring-plugins/blob/v2.2/plugins-scripts/utils.sh.in)
   This nagios plugins comes with ABSOLUTELY NO WARRANTY. So, enjoy ;)
 ```
-### Icinga2 config
+### Icinga2 Configuration
 ```
 object CheckCommand "snmp_proc" {
   import "plugin-check-command"

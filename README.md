@@ -1,7 +1,8 @@
 # check_snmp_proc.sh
 ## This is small Nagios plugin for checking status of processes (or quantity of them) via SNMP</H5>
 ### Usage:
-```./check_snmp_proc -H 127.0.0.1 -C public -N ssh -w 3 -c 0
+```
+./check_snmp_proc -H 127.0.0.1 -C public -N ssh -w 3 -c 0
 
 Where:
   -H hostname /string/

@@ -94,8 +94,14 @@ done
 PROCN=`echo $PROCN | cut -c -15`
 
 #echo $PROCN
+WLK=`$CMD_SNMPWALK -v1 -On -c $COMM $HOST $OID`
+if [ "$?" -ne 0 ]; then
+  STATE=$STATE_CRITICAL
+  exit $STATE
+fi
 
-CNT=`$CMD_SNMPWALK -v1 -On -c $COMM $HOST $OID | $CMD_GREP "\"$PROCN\"" | $CMD_WC -l`
+
+CNT=`echo $WLK | $CMD_GREP "\"$PROCN\"" | $CMD_WC -l`
 
 check_range $CNT $CRITICAL
 RET_CRIT=$?
